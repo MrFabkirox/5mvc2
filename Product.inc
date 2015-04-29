@@ -1,5 +1,5 @@
 <?php
-
+// Product
 	class Product {
 
 		private $id;
@@ -9,12 +9,17 @@
 		public function getId() {
 			return $this->id;
 		}
+
 		public function getDesignation() {
 			return $this->Designation;
 		}
+
 		public function getPrix() {
 			return $this->prix;
 		}
+
 	}
+
+	echo('!Product!');
 
 ?>

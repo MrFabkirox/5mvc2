@@ -1,24 +1,29 @@
 <?php
-
-	$model = array();
-
+// productList
+	
 	function buildModel() {
 		global $model;
 
-		$model = array();
 		connect();
-		$res = recupDataProd();
+		$res = dataFromDb();
 		disconnect();
 
-		while($prod = mysql_fetch_object($res, 'Product')) {
+		$model = array();
+
+		while($prod = mysql_fetch_object($res, "Product")) {
 			$model[] = $prod;
 		}
-		$_SESSION['prods'] = $list;
+		$_SESSION['prods'] = $list; // ?
+echo('buildModel');
 	}
 
-	function showList() {
+	function showModel() {
 		global $model;
-		showListProduct($model);
+
+		displayModel($model);
+
 	}
+
+	echo('!productList!');
 
 ?>

@@ -1,23 +1,30 @@
 <?php
-
+// productDAO
 	function connect() {
 		global $db;
 
-		$db = mysql_connect('localhost','root', 'root')or die("can t connect to the db");
-		mysql_select_db("MVCMarket", $db) or die("can t select db");
+		$db = mysql_connect('localhost', 'root', 'root') or die(" error connection db ");
+		mysql_select_db('MVCMarket', $db) or die(" error selection db ");
+
 	}
 
-	function recupDataProd() {
-		$res = mysql_query("SELECT * FROM produits");
-		if(!$res) {
-			die("can t execute query");
+	function dataFromDb() {
+
+		$query = mysql_query("SELECT * FROM produits");
+		if(!$query) {
+			die(" error in query ");
 		}
-		return $res;
+		return $query;
+
 	}
 
 	function disconnect() {
 		global $db;
+
 		mysql_close($db);
+
 	}
+
+	echo('!productDAO!');
 
 ?>

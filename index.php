@@ -31,14 +31,15 @@
 
 <?php
 
-	include('productList.inc');
-	include('productDAO.inc');
-	include('Product.inc');
 	include('showListP.inc');
+	include('Product.inc');
+	include('productDAO.inc');
+	include('productList.inc');
 
 	buildModel();
+	showModel();
 
-	showList();
+	echo('!index!');
 	
 ?>
 

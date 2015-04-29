@@ -1,10 +1,27 @@
 <?php
+// showListP
+	function displayModel($list) {
 
-	function showListProduct($list) {
-		foreach ($list as $prod) {
-			echo("<li>".$prod->getDesignation()." , ".$prod->getPrix()." euros");
-		}
-		echo("</ul");
+		$names = array('tom', 'robert', 'pierre');
+
+		echo('<ul>');
+
+			foreach($list as $line) {
+				echo('<li>'.$line->getDesignation().', '.$line->getPrix().'</li>');
+			}
+
+		echo('</ul>');
+		
+		echo('<ul>');
+
+			foreach($names as $element) {
+				echo('<li>'.$element.'</li>');
+			}
+
+		echo('</ul>');
+
 	}
-	
+
+	echo('!showListP!');
+
 ?>
